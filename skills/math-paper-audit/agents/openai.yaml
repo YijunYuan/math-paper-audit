@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mathematical Paper Audit"
+  short_description: "Audit proofs, references, computations, and manuscript rigor"
+  default_prompt: "Use $math-paper-audit to audit the manuscript through all six stages, preserve the original, and report evidence and locations in the manuscript's language."
