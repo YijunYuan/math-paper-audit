@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mathematical Proof Audit"
+  short_description: "Check proof steps, quantifiers, assumptions, and lemma uses"
+  default_prompt: "Use $math-proof-audit to verify proof logic, quantifiers, hidden assumptions, and theorem applications, preserve the original, and report specific evidence in the manuscript's language."
