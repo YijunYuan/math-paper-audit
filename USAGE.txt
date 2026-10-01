@@ -1,0 +1,85 @@
+Comprehensive Mathematical Manuscript Audit Skill Bundle
+
+Orchestrator entry point: $math-paper-audit
+
+Suggested invocation
+  Use $math-paper-audit to audit this manuscript's correctness and rigor.
+  Execute every specialist review in sequence, preserve the manuscript, and
+  produce a consolidated report with precise locations, mathematical evidence,
+  affected results, and proposed corrections. Explicitly list anything that
+  could not be verified.
+
+Attach the manuscript in the same message or provide its actual path.
+For example: Use $math-paper-audit to audit D:/papers/example/main.tex.
+
+The orchestrator executes these stages in order
+  1. $math-claim-map          Structure, all assertions, assumptions, and proof dependencies
+  2. $math-reference-audit    Primary sources, exact theorems, and each citation's applicability
+  3. $math-proof-audit        Step-by-step reasoning, quantifiers, hidden conditions, and proof gaps
+  4. $math-stress-test        Counterexamples, boundary and degenerate cases, and scope of conclusions
+  5. $math-computation-audit  Formulas, estimates, asymptotic expansions, and computational evidence
+  6. $math-manuscript-audit   Whole-manuscript argument closure in an independent context
+
+Individual specialists can also be invoked separately; their conclusions will
+identify the review as covering that specialist task only.
+The orchestrator's stages run sequentially. Within a stage, independent results
+may be assigned to subagents.
+
+Outputs
+  One consolidated report, the audit.json ledger, stage evidence, and any
+  calculation files needed to reproduce checks.
+  Reports distinguish mathematical errors, proof gaps, unverified references,
+  incomplete checks, exposition issues, and typographic issues.
+  Final reports follow the predominant language of the manuscript's prose,
+  regardless of the language used in the chat. Retain original quotations,
+  mathematical formulas, notation, and identifiers where appropriate.
+  Request LaTeX or PDF when invoking the skill if that format is needed;
+  no particular document format is required by default.
+
+Default behavior
+  Review the entire current manuscript, including appendices, unnumbered claims,
+  citations, and the connections between the main conclusions.
+  Review only by default. Explicitly request "audit and repair" to include fixes.
+  Changes to reviewed files make the old audit stale; affected arguments must be
+  rechecked after repairs.
+  Internal arguments can be checked offline. Inaccessible external sources
+  remain unverified.
+  Use an independent subagent for the whole-manuscript review when available;
+  explicitly report the limitation when one is unavailable.
+  No Danus installation or service, particular model, API key, or external
+  plugin is required.
+  The bookkeeping helper uses only Python's standard library and does not
+  certify mathematical correctness.
+
+Outcome labels
+  NO_ISSUES_FOUND  No unresolved issues found within the declared scope
+  NOTES_ONLY       Exposition or typographic notes only
+  ISSUES_FOUND     Mathematical errors, proof gaps, or circular dependencies remain
+  INCOMPLETE       Some review work is unfinished or could not be verified
+  STALE            Reviewed files have changed or cannot be read
+  INVALID_AUDIT    Audit records have malformed or inconsistent accounting that must be corrected
+
+These outcomes describe review findings, not formal proof certificates.
+"No issues found" is always limited by the declared scope and available evidence.
+
+File locations and portability
+  The skills/ directory contains seven skill directories. Keep them together
+  so that the orchestrator and specialists can read their shared contract.
+  To use the bundle on another machine, place all seven directories in that
+  environment's personal skills directory. See README.md for installation
+  locations and invocation syntax for Codex, Claude Code, and OpenCode.
+  If the current session does not list the new skills, start a new session or
+  provide the orchestrator's SKILL.md path directly for the assistant to read.
+
+Provenance
+  Adapted from Danus review methods, retaining Apache-2.0 licensing and
+  attribution notices.
+  See skills/math-paper-audit/references/provenance.md for sources and changes.
+  This bundle is not an official Danus release.
+
+Maintenance validation
+  The bundle root includes tests/test_audit_state.py. Run it in an environment
+  with Python installed:
+    python -m unittest discover -s tests -q
+  These tests check the bookkeeping validator's behavior. They do not establish
+  that the model can find every error in an arbitrary manuscript.

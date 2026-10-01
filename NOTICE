@@ -1,0 +1,12 @@
+Mathematical Manuscript Audit Skills
+
+Adapted from Danus, Copyright 2026 FrenzyMath.
+https://github.com/frenzymath/Danus
+Source snapshot: 6d92e8d415933ca2ef52fd1a4da73fdfcd418f1c (codex branch).
+Licensed under the Apache License, Version 2.0; see LICENSE.
+
+This skill is a substantially modified manuscript-review adaptation,
+created 2026-09-30. It is not an upstream Danus release. The original
+runtime/service dependencies and proof-search workflow are not included.
+Changes and source mapping: skills/math-paper-audit/references/provenance.md
+in this seven-skill bundle.

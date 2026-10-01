@@ -1,0 +1,62 @@
+Skill Bundle Validation Notes (2026-09-30)
+
+Language update (2026-10-01)
+  All skill instructions, interface metadata, and bundled documentation are
+  now in English. Reports follow the manuscript's predominant prose language,
+  including specialist reports and the independent whole-manuscript review.
+  The updated bundle passed the seven skill format validators, link and
+  interface checks, and a scan for remaining Chinese text or filenames.
+  The mathematical trial and 43 bookkeeping tests described below are prior
+  validation results; those tests were not rerun for this documentation update.
+
+Public repository packaging (2026-10-01)
+  All 43 bookkeeping regression tests passed again on Python 3.12 in the
+  sanitized publication directory. The local installation manifest is excluded.
+  Harness compatibility is based on published skill formats; no complete
+  Claude Code or OpenCode audit has been run.
+
+Format and integration
+  All seven skills passed the quick_validate.py validator supplied by
+  skill-creator.
+  Checks covered links between specialist skills and the shared contract,
+  interface metadata, default invocation names, automatic discovery policies,
+  and provenance and license files.
+
+Bookkeeping validator
+  All 43 behavioral tests passed on both Python 3.7 and Python 3.12.
+  Checks covered missing stages, omitted review scope, changed inputs,
+  unreadable files, duplicate IDs, nonexistent dependencies, dependency cycles,
+  deep dependency graphs, unresolved gaps, unverified references, improper
+  downgrading of errors, missing resolution evidence, manuscripts without
+  theorem environments, malformed JSON, overwrite prevention, and mathematical
+  Unicode output under restricted Windows terminal encodings.
+  The included tests/ directory can be used to rerun these checks.
+
+Independent design review
+  A separate reviewer read the orchestrator, shared contract, helper script,
+  and six specialist interfaces and found no substantive design issues
+  requiring correction.
+
+Live blind trial
+  The orchestrator actually executed the six-stage workflow on a test
+  manuscript containing both correct and incorrect arguments.
+  Both the first specialist passes and the independent whole-manuscript review,
+  which had not seen the earlier issue list, identified four categories of
+  seeded errors: an unmet compactness condition in an external theorem,
+  an invalid interchange of integration and a limit, an incorrect sum-of-squares
+  formula, and a false assertion for arbitrary parameters with a circular proof.
+  The valid quadratic estimate, its equality conditions, and its optimal
+  constant were not incorrectly flagged as mathematical gaps.
+  The trial also executed and preserved exact rational and polynomial
+  calculations.
+  This was a small representative trial, not an evaluation of detection rates
+  or accuracy on research-level papers.
+
+Limits of validation
+  Passing format validation establishes that the skills can be read using
+  the standard structure. Passing script tests establishes that the
+  bookkeeping validator follows its contract in the tested scenarios.
+  Neither establishes that the model can detect every error in an arbitrary
+  manuscript.
+  Mathematical judgments still require checkable derivations, sources, and
+  applicable hypotheses; test counts cannot replace that evidence.

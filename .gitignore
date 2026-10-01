@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+installation-manifest.json
+.DS_Store
+Thumbs.db
