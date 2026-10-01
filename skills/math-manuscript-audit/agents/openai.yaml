@@ -1,0 +1,4 @@
+interface:
+  display_name: "Independent Manuscript Audit"
+  short_description: "Independently check whether the paper proves its stated results"
+  default_prompt: "Use $math-manuscript-audit to review the complete manuscript in a fresh context, check its main conclusions, assumptions, and cross-section dependencies, and report in the manuscript's language."
