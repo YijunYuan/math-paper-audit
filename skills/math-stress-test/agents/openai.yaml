@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mathematical Stress Test"
+  short_description: "Search for counterexamples and check boundary cases"
+  default_prompt: "Use $math-stress-test to test claims with boundary cases and counterexample searches, verify every hypothesis of a proposed refutation, and report in the manuscript's language."
