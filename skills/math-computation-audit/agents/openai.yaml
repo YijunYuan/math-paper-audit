@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mathematical Computation Audit"
+  short_description: "Verify formulas, estimates, asymptotics, and numerical evidence"
+  default_prompt: "Use $math-computation-audit to independently verify calculations, preserve reproducible evidence, distinguish exact derivations from exploratory numerics, and report in the manuscript's language."
