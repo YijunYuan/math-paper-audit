@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mathematical Reference Audit"
+  short_description: "Verify source theorems, definitions, and citation applications"
+  default_prompt: "Use $math-reference-audit to verify cited results and their applications against original sources, distinguish errors from unavailable evidence, and report in the manuscript's language."
