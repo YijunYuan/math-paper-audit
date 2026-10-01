@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mathematical Claim Map"
+  short_description: "Map claims, assumptions, citations, and proof dependencies"
+  default_prompt: "Use $math-claim-map to map the manuscript's claims, assumptions, dependencies, review scope, and potential circular arguments, reporting in the manuscript's language."
